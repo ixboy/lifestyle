@@ -1,0 +1,20 @@
+<div class="container">
+  <%= form_with model: @user, local: true, class: "form user-form" do |f| %>
+    <div class="form-field">
+      <%= f.text_field :name, placeholder: "Name", required: true, class: 'form-control' %>
+    </div>
+    <div class="form-field">
+      <%= f.email_field :email, placeholder: "example@me.com", required: true, class: 'form-control' %>
+    </div>
+    <div class="form-field">
+      <%= f.password_field :password, placeholder: "******", required: true, class: 'form-control' %>
+    </div>
+    <div class="form-field">
+      <%= f.password_field :password_confirmation, placeholder: "******", required: true, class: 'form-control' %>
+    </div>
+    <div class="form-field">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+    <p class="navigation-link">Already a member? <%= link_to "Login Here!", login_path %></p>
+  <% end %>
+</div>
