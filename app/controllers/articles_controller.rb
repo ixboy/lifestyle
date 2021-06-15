@@ -1,23 +1,21 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[show edit update destroy]
+  before_action :require_login, only: %i[new create]
 
-  # GET /articles or /articles.json
   def index
     @articles = Article.all
   end
 
-  # GET /articles/1 or /articles/1.json
-  def show; end
-
-  # GET /articles/new
-  def new
-    @article = Article.new
+  def show
+    @articles = Article.all
   end
 
-  # GET /articles/1/edit
+  def new
+    @article = Article.new
+    @category = Category.all.map { |c| [c.name, c.id] }
+  end
+
   def edit; end
 
-  # POST /articles or /articles.json
   def create
     @article = current_user.articles.build(article_params)
 
@@ -56,13 +54,18 @@ class ArticlesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
+  def require_login
+    return unless current_user.nil?
+
+    flash[:alert] = 'Please login to Create an Article'
+    redirect_to login_path
+  end
+  
   def set_article
     @article = Article.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :category_id)
   end
 end
