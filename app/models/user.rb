@@ -4,6 +4,4 @@ class User < ApplicationRecord
   has_many :votes
   validates :name, presence: true, uniqueness: true, length: { minimum: 2, maximum: 30,
                                                                too_long: '30 characters is the maximum allowed' }
-
-  before_validation :normalize_name, on: :create
 end
