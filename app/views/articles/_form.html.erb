@@ -1,36 +1,40 @@
-<%= form_with(model: article) do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-        <% article.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%
-=begin%>
- <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div> 
-<%
-=end%>
-
+<%= display_errors(@article) %>
+<div class="container flex">
+<%= form_with(model: article, class: 'new-article-form') do |form| %>
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, placeholder: 'Write your title here...', 
+                                class: 'new-article-title',
+                                required: true, 
+                                minlength: 2,
+                                maxlength: 100
+    %>
   </div>
 
   <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text %>
+    <%= form.text_area :text, placeholder: 'Write your article here...', 
+                              required: true,
+                              minlength: 2,
+                              maxlength: 2000
+    %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image, 'Image URL' %>
+    <%= form.url_field :image, placeholder: 'Paste the URL of an image here...',
+                               class: 'image-input',
+                               required: true
+    %>
+  </div>
+
+
+ <%= form.hidden_field :user_id, value: current_user.id %> 
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.select(:category_id, @category) %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Publish', class: 'publish-btn' %>
   </div>
 <% end %>
