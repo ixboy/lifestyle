@@ -3,10 +3,18 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @most_voted = Vote.count_by_article
+    @votes_by_category = Vote.count_by_category
+    @categories = Category.prioritize(@votes_by_category).ids
+    @featured = Article.find(@most_voted)
+    @first = Article.last_by_category(@categories, 0)
+    @second = Article.last_by_category(@categories, 1)
+    @third = Article.last_by_category(@categories, 2)
+    @fourth = Article.last_by_category(@categories, 3)
   end
 
   def show
-    @articles = Article.all
+    @article = Article.find(params[:id])
   end
 
   def new
@@ -60,12 +68,12 @@ class ArticlesController < ApplicationController
     flash[:alert] = 'Please login to Create an Article'
     redirect_to login_path
   end
-  
+
   def set_article
     @article = Article.find(params[:id])
   end
 
   def article_params
-    params.require(:article).permit(:title, :text, :category_id)
+    params.require(:article).permit(:title, :text, :image, :category_id)
   end
 end
