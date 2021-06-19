@@ -13,3 +13,159 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&display=swap');
+
+/* reset */
+
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* wide */
+
+h1,
+h2,
+h3 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 900;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.alert {
+  background-color: #e84545;
+  padding: 1rem;
+}
+
+/* navigation bar */
+
+nav {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #847f7b;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 4rem;
+}
+
+nav .navbar-link {
+  font-size: 1rem;
+}
+
+nav .navbar-link:active,
+nav .navbar-link:focus {
+  color: #f86309;
+}
+
+nav .navbar-image {
+  width: 15%;
+}
+
+nav .category a {
+  padding: 0.5rem;
+  color: #847f7b;
+}
+
+nav .account {
+  display: flex;
+}
+
+nav .account a {
+  color: #847f7b;
+}
+
+nav .account .fa-search {
+  padding: 0 1rem;
+}
+
+nav .account .last-btn {
+  color: #e84545da;
+  width: fit-content;
+  height: 2rem;
+  margin-left: 0.3rem;
+}
+
+nav .category a:focus {
+  color: #f86309;
+}
+
+/* footer */
+
+footer {
+  margin-top: -3px;
+  height: 67px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4e443e;
+  z-index: 10;
+}
+
+.footer-brand {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.footer-bike {
+  position: relative;
+  bottom: 3px;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+.link-orange {
+  color: #fa6000;
+}
+
+.link-white {
+  color: #fff;
+}
+
+.social-icons {
+  align-items: center;
+}
+
+.social-icon {
+  padding-right: 2px;
+  font-size: 1.3rem;
+}
