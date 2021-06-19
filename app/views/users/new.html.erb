@@ -1,5 +1,6 @@
-<div class="container">
-  <%= form_with model: @user, local: true, class: "form user-form" do |f| %>
+<div class="login-container">
+ <%= image_tag "liFEsTlye.png", class: "navbar-image", alt:"Lifestyle" %>
+  <%= form_with model: @user, local: true, class: "login-form flex" do |f| %>
     <div class="form-field">
       <%= f.text_field :name, placeholder: "Name", required: true, class: 'form-control' %>
     </div>
@@ -13,8 +14,9 @@
       <%= f.password_field :password_confirmation, placeholder: "******", required: true, class: 'form-control' %>
     </div>
     <div class="form-field">
-      <%= f.submit class: "btn btn-primary" %>
+      <%= f.submit class: "publish-btn" %>
     </div>
-    <p class="navigation-link">Already a member? <%= link_to "Login Here!", login_path %></p>
+    <p class="navigation-link">Already a member? <%= link_to "Login Here!", login_path, class:'publish-btn' %></p>
+
   <% end %>
 </div>

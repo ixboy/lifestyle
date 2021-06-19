@@ -1,20 +1,14 @@
-<div class="container flex">
-      <%= form_with(url: login_path, local: true, class: 'form session-form') do |f| %>
-        <div class="form-field">
-          <%= f.text_field :name, placeholder: "username", required: true, class: 'form-control' %>
-        </div>
- <div class="form-field">
-        </div>
-        <%
-=begin%>
- <div class="form-field">
-          <%= f.password_field :password, placeholder: "******", required: true, class: 'form-control' %>
-        </div> 
-<%
-=end%>
-        <div class="form-field">
-          <%= f.submit "Login", class: "btn btn-primary" %>
-        </div> 
-        <p class="navigation-link">New user? <%= link_to "Sign up now!", new_user_path %></p>
-      <% end %>
+<div class='login-container'>
+
+
+ <%= image_tag "liFEsTlye.png", class: "navbar-image", alt:"Lifestyle" %>
+    
+  <%= form_tag '/login', class: 'login-form flex' do %>
+  
+  <%= text_field_tag :name %>
+  <%= submit_tag "Login", class:'publish-btn' %>
+  <p class="navigation-link">New user? <%= link_to "Sign up now!", new_user_path, class:'publish-btn' %></p>
+  
+  <% end %>
+
 </div>
