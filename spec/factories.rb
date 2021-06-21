@@ -1,13 +1,14 @@
 require 'faker'
 
 FactoryBot.define do
+
   factory :vote, class: 'Vote' do
     user_id { rand(1..8) }
     article_id { rand(1..10) }
   end
 
   factory :user, class: 'User' do
-    name { Faker::Name.unique.name[0..20] }
+    name { Faker::Name.unique.name[0..19] }
     email { Faker::Internet.unique.email }
     password { '123456' }
     password_confirmation { '123456' }
