@@ -19,12 +19,13 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @category = Category.all.map { |c| [c.name, c.id] }
+    @all_categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def edit; end
 
   def create
+    @all_categories = Category.all.map { |c| [c.name, c.id] }
     @article = current_user.articles.build(article_params)
 
     respond_to do |format|
