@@ -10,7 +10,6 @@ class Article < ApplicationRecord
                                              too_long: '3000 characters is the maximum allowed' }
   validates :user_id, presence: true
   validates :category_id, presence: true
-  validates :image, format: { with: /\.(png|jpg|jpeg)/, message: 'must be a URL for GIF, JPG or PNG image.' }
 
   scope :order_by_most_recent, -> { order(created_at: :desc) }
   scope :category, ->(category_id) { where(category_id: category_id) }
