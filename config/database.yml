@@ -84,5 +84,4 @@ test:
 production:
   <<: *default
   database: lifestyle_production
-  username: lifestyle
-  
+  username: ismael
