@@ -68,6 +68,9 @@ GEM
     bootsnap (1.7.5)
       msgpack (~> 1.0)
     builder (3.2.4)
+    bullet (6.1.4)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     byebug (11.1.3)
     capybara (3.35.3)
       addressable
@@ -82,24 +85,26 @@ GEM
     crass (1.0.6)
     database_cleaner (2.0.1)
       database_cleaner-active_record (~> 2.0.0)
-    database_cleaner-active_record (2.0.0)
+    database_cleaner-active_record (2.0.1)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
-    factory_bot (6.1.0)
+    factory_bot (6.2.0)
       activesupport (>= 5.0.0)
-    factory_bot_rails (6.1.0)
-      factory_bot (~> 6.1.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faker (2.17.0)
+    faker (2.18.0)
       i18n (>= 1.6, < 2)
-    ffi (1.15.1)
+    ffi (1.15.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    heroku-deflater (0.6.3)
-      rack (>= 1.4.5)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -152,6 +157,10 @@ GEM
       bundler (>= 1.15.0)
       railties (= 6.1.3.2)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -192,7 +201,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
-    rubocop (1.16.1)
+    rubocop (1.17.0)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -237,6 +246,7 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
+    uniform_notifier (1.14.2)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -251,7 +261,7 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    websocket-driver (0.7.4)
+    websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
@@ -262,35 +272,38 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt (~> 3.1, >= 3.1.16)
   bootsnap (>= 1.4.4)
+  bullet
   byebug
-  capybara (>= 3.26)
+  capybara
   database_cleaner
+  dotenv-rails
   factory_bot_rails
   faker
-  heroku-deflater
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  pg (~> 1.1)
+  pg
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
-  rails (~> 6.1.3)
+  rails (~> 6.1.3, >= 6.1.3.1)
+  rails-controller-testing
   rails_12factor
-  rspec-rails
-  rubocop (>= 1.0, < 2.0)
+  rexml
+  rspec-rails (~> 5.0, >= 5.0.1)
+  rubocop (~> 1.13)
   sass-rails (>= 6)
   selenium-webdriver
-  shoulda-matchers (~> 4.0)
+  shoulda-matchers
   spring
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
-  webdrivers (~> 4.0)
+  webdrivers
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 3.0.0p0
 
 BUNDLED WITH
-   2.1.4
+   2.2.3
