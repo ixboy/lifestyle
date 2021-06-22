@@ -1,7 +1,6 @@
 require 'faker'
 
 FactoryBot.define do
-
   factory :vote, class: 'Vote' do
     user_id { rand(1..8) }
     article_id { rand(1..10) }

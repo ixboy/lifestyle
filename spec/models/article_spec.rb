@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-
   it 'has valid attributes' do
     expect(article).to be_valid
   end
@@ -19,7 +18,7 @@ RSpec.describe Article, type: :model do
   describe 'Associations' do
     it { should belong_to(:user).without_validating_presence }
   end
-  
+
   describe 'Associations' do
     it { should belong_to(:category).without_validating_presence }
   end
