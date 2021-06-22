@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'articles#index'  
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
@@ -11,5 +12,4 @@ Rails.application.routes.draw do
   resources :categories
   resources :articles
   resources :users
-  root 'articles#index'  
 end

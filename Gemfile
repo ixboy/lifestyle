@@ -60,5 +60,11 @@ group :test do
   gem 'webdrivers', '~> 4.0', require: false
 end
 
+group :production do    
+    gem 'rails_12factor'
+    gem 'heroku-deflater'   
+end
+
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
