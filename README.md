@@ -2,7 +2,7 @@ A desktop web app where users can create articles about their Lifestyle activiti
 
 ## Screenshot
 
-![screenshot](./main_screenshot.png)
+![screenshot](./app/assets/images/main_screenshot.png)
 ## Built With
 
 - Ruby v3.0.0
