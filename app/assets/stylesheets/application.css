@@ -111,8 +111,20 @@ nav .account a {
   color: #847f7b;
 }
 
-nav .account .fa-search {
-  padding: 0 1rem;
+nav .account .search {
+  display: inline;
+  width: 3rem;
+  height: fit-content;
+  font-weight: 0;
+
+}
+
+nav .account .sbtn {
+  margin: 0;
+  padding: 0;
+  height: 2rem;
+  width: 4rem;
+  
 }
 
 nav .account .last-btn {
