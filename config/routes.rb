@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'articles#index'  
+  get 'search', to:"articles#search"
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

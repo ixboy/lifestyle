@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
   before_action :require_login, only: %i[new create]
 
   def index
-    @articles = Article.all
     @most_voted = Vote.count_by_article
     @votes_by_category = Vote.count_by_category
     @categories = Category.prioritize(@votes_by_category).ids
@@ -11,6 +10,11 @@ class ArticlesController < ApplicationController
     @second = Article.last_by_category(@categories, 2)
     @third = Article.last_by_category(@categories, 3)
     @fourth = Article.last_by_category(@categories, 4)
+  end
+
+  def search
+    @articles = Article.where('title LIKE ?', "%#{params[:query]}%")
+    redirect_to root_path if @articles.empty?
   end
 
   def show
