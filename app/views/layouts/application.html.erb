@@ -26,11 +26,14 @@
     <%= link_to 'NEW ARTICLE', new_article_path, class: 'navbar-link' %>
     </div>
     <div class="account">
+     <%= form_with url: "/search", method: :get do |form| %>
+        <%= form.text_field :query, class: "search" %>
+        <%= form.submit "Search", class: "sbtn" %>
+      <% end %>
       <%= navbar_link_name %>
       <%= navbar_button_logout%>
       <%= navbar_link_login %>
       <%= navbar_link_sign_up %>
-      <i class="fa fa-search" aria-hidden="true"></i>
     </div>
   </nav>
   <div class="ribbon flex">
