@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
 
   def search
     @articles = Article.where('title LIKE ?', "%#{params[:query]}%")
-    redirect_to root_path if @articles.empty?
+    redirect_to root_path, notice: 'Search Not Found' if @articles.empty?
   end
 
   def show
