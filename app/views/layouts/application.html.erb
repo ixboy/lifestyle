@@ -3,14 +3,48 @@
   <head>
     <title>Lifestyle</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "https://pro.fontawesome.com/releases/v5.10.0/css/all.css" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+ 
+   
+ <nav class='flex'>
+ <%= image_tag "liFEsTlye.png", class: "navbar-image" %>
+    <div class="category">
+    <%= link_to 'HOME', root_path, class: 'navbar-link navbar-home' %>
+    <%= link_to 'BUSINESS', category_path(1), class: 'navbar-link'%>
+    <%= link_to 'Entertainment', category_path(2), class: 'navbar-link'%>
+    <%= link_to 'Magazine', category_path(3), class: 'navbar-link'%>
+    <%= link_to 'Fashion', category_path(4), class: 'navbar-link'%>
+    <%= link_to 'Sports', category_path(5), class: 'navbar-link'%>
+    <%= link_to 'NEW ARTICLE', new_article_path, class: 'navbar-link' %>
+    </div>
+    <div class="account">
+     <%= form_with url: "/search", method: :get do |form| %>
+        <%= form.text_field :query, class: "search" %>
+        <%= form.submit "Search", class: "sbtn" %>
+      <% end %>
+      <%= navbar_link_name %>
+      <%= navbar_button_logout%>
+      <%= navbar_link_login %>
+      <%= navbar_link_sign_up %>
+    </div>
+  </nav>
+  <div class="ribbon flex">
+    <div class="red-ribbon">
+    </div>
+    <div class="gray-ribbon">
+    </div>
+  </div>
+  <div>
+      <%= display_msg %>
+      <%= yield %>
+  </div>
+
   </body>
 </html>
