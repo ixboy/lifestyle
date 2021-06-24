@@ -28,12 +28,11 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - Clone this repository using the link above (click on the 'code' button)
-- Create a `.env` file at the root of the project and replace the values accordly, look at `.env.example file` for required keys.
 - open a terminal and `cd` to the cloned repository
 - run `bundle install` to install the dependencies
 - run `rails db:create`
 - run `rails db:migrate` to migrate the rest of the database
-- run `rails db:seed`
+- run `rails db:seed`  ### This is a very important step to run the app locally.
 
 ### Usage
 
