@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="stripes-cover">
+  <div class='articles-container grid'>
+   <div class="article-container flex"><%= category_article(@first, @category) %></div>
+   <div class="article-container flex"><%= category_article(@second, @category) %></div>
+   <div class="article-container flex reverse"><%= category_article(@third, @category) %></div>
+   <div class="article-container flex reverse"><%= category_article(@fourth, @category) %></div>
+  </div>
+</div>
+
+
+    <footer class='flex'>
+    <div class=""><a class='footer-brand link-white' href="#">liFEsTlye</a></div>
+    <div class='flex'>
+      <p class="footer-link link-orange">Privacy Policy</p>
+      <p class="footer-link link-orange">Terms & Conditions</p>
+      <p class="footer-link link-white">Copyright 2014. All rights reserved.</p>
+      </div>
+    <div class='flex social-icons'>
+        <p class='footer-link link-white'>Connect with us: </p>
+        <i class="social-icon link-orange fab fa-twitter"></i>
+        <i class="social-icon link-orange fab fa-instagram"></i>
+        <i class="social-icon link-orange fab fa-facebook"></i>
+    </div>
+  </footer>

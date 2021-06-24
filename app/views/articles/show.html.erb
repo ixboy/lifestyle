@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+  <div class='show-container'>
+    <div class='article-top-line flex'>
+      <div class='red-line'></div>
+      <div class='gray-line'></div>
+    </div>
+    <div class= 'article-show-container'>
+      <h1 class='article-show-title'><%= @article.title %></h1>
+      <p>
+      By: <%= author_name(@article) %>
+      </p>
+      <%= image_tag @article.image, alt: 'Article image', class: 'article-show-image' %>
+      <p>
+        <%= @article.text %>
+      </p>
+      <p>
+      Category:
+        <%= category_link(@article) %>
+      </p>
+    </div>
+  </div>
+
+    <footer class='flex'>
+    <div class=""><a class='footer-brand link-white' href="#">liFEsTlye</a></div>
+    <div class='flex'>
+      <p class="footer-link link-orange">Privacy Policy</p>
+      <p class="footer-link link-orange">Terms & Conditions</p>
+      <p class="footer-link link-white">Copyright 2014. All rights reserved.</p>
+      </div>
+    <div class='flex social-icons'>
+        <p class='footer-link link-white'>Connect with us: </p>
+        <i class="social-icon link-orange fab fa-twitter"></i>
+        <i class="social-icon link-orange fab fa-instagram"></i>
+        <i class="social-icon link-orange fab fa-facebook"></i>
+    </div>
+  </footer>

@@ -1,0 +1,40 @@
+<%= display_errors(@article) %>
+<div class="container flex">
+<%= form_with(model: article, class: 'new-article-form') do |form| %>
+  <div class="field">
+    <%= form.text_field :title, placeholder: 'Write your title here...', 
+                                class: 'new-article-title',
+                                required: true, 
+                                minlength: 2,
+                                maxlength: 100
+    %>
+  </div>
+
+  <div class="field">
+    <%= form.text_area :text, placeholder: 'Write your article here...', 
+                              required: true,
+                              minlength: 2,
+                              maxlength: 2000
+    %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image, 'Image URL' %>
+    <%= form.url_field :image, placeholder: 'Paste the URL of an image here...',
+                               class: 'image-input',
+                               required: true
+    %>
+  </div>
+
+
+ <%= form.hidden_field :user_id, value: current_user.id %> 
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.select(:category_id, @all_categories) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Publish', class: 'publish-btn' %>
+  </div>
+<% end %>

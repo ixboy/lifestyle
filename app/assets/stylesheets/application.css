@@ -13,3 +13,447 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&display=swap');
+
+/* reset */
+
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* wide */
+
+h1,
+h2,
+h3 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 900;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.alert {
+  background-color: #e84545;
+  padding: 1rem;
+}
+
+/* navigation bar */
+
+nav {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #847f7b;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 4rem;
+}
+
+nav .navbar-link {
+  font-size: 1rem;
+}
+
+nav .navbar-link:active,
+nav .navbar-link:focus {
+  color: #f86309;
+}
+
+nav .navbar-image {
+  width: 15%;
+}
+
+nav .category a {
+  padding: 0.5rem;
+  color: #847f7b;
+}
+
+nav .account {
+  display: flex;
+}
+
+nav .account a {
+  color: #847f7b;
+}
+
+nav .account .search {
+  display: inline;
+  width: 3rem;
+}
+
+nav .account .sbtn {
+  margin: 0;
+  padding: 0;
+  height: 2rem;
+  width: 4rem;
+}
+
+nav .account .last-btn {
+  color: #e84545da;
+  width: fit-content;
+  height: 2rem;
+  margin-left: 0.3rem;
+}
+
+nav .category a:focus {
+  color: #f86309;
+}
+
+/* footer */
+
+footer {
+  margin-top: -3px;
+  height: 67px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4e443e;
+  z-index: 10;
+}
+
+.footer-brand {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.footer-bike {
+  position: relative;
+  bottom: 3px;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+.link-orange {
+  color: #fa6000;
+}
+
+.link-white {
+  color: #fff;
+}
+
+.social-icons {
+  align-items: center;
+}
+
+.social-icon {
+  padding-right: 2px;
+  font-size: 1.3rem;
+}
+
+/* homepage */
+
+.main-container {
+  margin-top: -1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-article {
+  position: relative;
+}
+
+.main-article-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: 20%;
+  opacity: 0.8;
+}
+
+.main-article-info {
+  position: absolute;
+  bottom: 67px;
+  padding-left: 1rem;
+}
+
+.main-article-title {
+  color: #fa6000;
+  font-size: 1.5rem;
+}
+
+.main-article-caption {
+  margin-top: 25px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* category show page */
+
+.categories {
+  position: relative;
+  top: -3px;
+}
+
+.category-item {
+  width: 25%;
+  height: 250px;
+  position: relative;
+}
+
+.category-title {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 900;
+  position: absolute;
+  top: 12px;
+  padding-left: 1rem;
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: #fefe00;
+  text-decoration-thickness: 3px;
+}
+
+.category-article-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-article-title {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: #fff;
+  font-family: 'Chivo', sans-serif;
+  font-weight: 900;
+}
+
+/* new article */
+
+input {
+  height: 1.2rem;
+  line-height: 1.5rem;
+  padding: 0.2rem 1rem;
+}
+
+textarea {
+  height: 20rem;
+  padding: 1rem 0;
+  font: 400  1.2rem 'Montserrat', sans-serif;
+  border: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+label {
+  margin-bottom: 0.2rem;
+}
+
+select {
+  font: 400  0.9rem 'Montserrat', sans-serif;
+}
+
+.article-top-line {
+  width: 100%;
+  height: 7px;
+}
+
+.red-line {
+  width: 20%;
+  background-color: #e8072f;
+}
+
+.gray-line {
+  width: 80%;
+  background-color: #847f7b;
+}
+
+.new-article-form {
+  width: 40%;
+  margin: 4rem auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.new-article-title {
+  font: 900 2.5rem 'Chivo', sans-serif;
+  color: #4d443e;
+  border: none;
+  padding: 1rem 0;
+}
+
+.publish-btn {
+  background-color: #fd6000;
+  font: 600 1rem 'Chivo', sans-serif;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 2rem;
+  margin: 0 auto;
+}
+
+/* show article */
+
+.show-container {
+  margin-top: -1rem;
+}
+
+.article-show-container {
+  width: 40%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.article-show-title {
+  color: #4d443e;
+}
+
+.article-show-image {
+  max-width: 100%;
+}
+
+.category-link {
+  font-weight: 600;
+  color: #fd6000;
+}
+
+.articles-container {
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 450px 450px;
+  margin-top: -1rem;
+}
+
+.stripes-cover {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.15) 4px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 6px
+    );
+}
+
+.article-image {
+  max-width: 50%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  object-position: 20%;
+}
+
+.article-snippet {
+  padding: 1rem;
+  width: 50%;
+  position: relative;
+}
+
+.article-snippet-category {
+  display: inline-flex;
+  padding-bottom: 8px;
+  color: #f99b00;
+  font-size: 1.4rem;
+  border-bottom: 3px solid #f99b00;
+}
+
+.article-snippet-title {
+  color: rgb(77, 68, 62);
+}
+
+.vote-btn {
+  background-color: #fd6000;
+  padding: 0.2rem 0.5rem;
+  height: 1.5rem;
+  font: 600 1rem 'Chivo', sans-serif;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  transition-timing-function: ease;
+  cursor: pointer;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.login-form input {
+  margin: 0.3rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+input:disabled {
+  opacity: 0.6;
+}
+
+input:enabled:hover {
+  opacity: 0.8;
+}
+
+.vote-count {
+  width: 23px;
+  padding: 0.5rem;
+  color: #f9a167;
+  font: 600 1rem 'Chivo', sans-serif;
+  text-align: center;
+  border: 2px solid #fd6000;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  bottom: -0.3rem;
+  right: 5rem;
+}
+
+.login-container {
+  flex-direction: column;
+  width: 40%;
+  height: 755px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.login-form {
+  flex-direction: column;
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+.login-img {
+  max-width: 80%;
+  height: 350px;
+}

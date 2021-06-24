@@ -1,0 +1,22 @@
+<div class="login-container">
+ <%= image_tag "liFEsTlye.png", class: "navbar-image", alt:"Lifestyle" %>
+  <%= form_with model: @user, local: true, class: "login-form flex" do |f| %>
+    <div class="form-field">
+      <%= f.text_field :name, placeholder: "Name", required: true, class: 'form-control' %>
+    </div>
+    <div class="form-field">
+      <%= f.email_field :email, placeholder: "example@me.com", required: true, class: 'form-control' %>
+    </div>
+    <div class="form-field">
+      <%= f.password_field :password, placeholder: "password", required: true, class: 'form-control' %>
+    </div>
+    <div class="form-field">
+      <%= f.password_field :password_confirmation, placeholder: "password_confirmation", required: true, class: 'form-control' %>
+    </div>
+    <div class="form-field">
+      <%= f.submit class: "publish-btn" %>
+    </div>
+    <p class="navigation-link">Already a member? <%= link_to "Login Here!", login_path, class:'publish-btn' %></p>
+
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<div class='login-container'>
+
+
+ <%= image_tag "liFEsTlye.png", class: "navbar-image", alt:"Lifestyle" %>
+    
+  <%= form_tag '/login', class: 'login-form flex' do %>
+  
+  <%= text_field_tag :name %>
+  <%= submit_tag "Login", class:'publish-btn' %>
+  <p class="navigation-link">New user? <%= link_to "Sign up now!", new_user_path, class:'publish-btn' %></p>
+  
+  <% end %>
+
+</div>
