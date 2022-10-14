@@ -10,11 +10,6 @@ A desktop web app where users can create articles about their Lifestyle activiti
 - PostgresSQL
 
 
-## Live Demo
-
-Check the [live version](https://boiling-river-46184.herokuapp.com/) of the app!
-
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
